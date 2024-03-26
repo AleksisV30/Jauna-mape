@@ -4,6 +4,7 @@ const instructionText = document.getElementById('instruction-text');
 const logo = document.getElementById('logo');
 const score = document.getElementById('score');
 const highScoreText = document.getElementById('highScore');
+const highScoreLabel = document.getElementById('highest_score_txt');
 
 // Define game variables
 const gridSize = 20;
@@ -200,5 +201,9 @@ function updateHighScore() {
     highScore = currentScore;
     highScoreText.textContent = highScore.toString().padStart(3, '0');
   }
-  highScoreText.style.display = 'block';
+
+  if (currentScore > 0) {
+    highScoreText.style.display = 'block';
+    highScoreLabel.style.display = 'block';
+  }
 }

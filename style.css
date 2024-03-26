@@ -88,9 +88,13 @@ body,
   position: absolute;
 }
 
-.score-txt, .highest-score-txt {
+.score-txt, #highest_score_txt {
   padding: 0;
   text-align: center;
   font-size: 40px;
   color: #8e8888;
+}
+
+#highest_score_txt {
+  display: none;
 }
