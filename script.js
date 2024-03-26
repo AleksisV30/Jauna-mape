@@ -91,14 +91,18 @@ function move() {
     food = generateFood();
     increaseSpeed();
     clearInterval(gameInterval); // Clear past interval
-    gameInterval = setInterval(() => {
-      move();
-      checkCollision();
-      draw();
-    }, gameSpeedDelay);
+    initilizeInterval();
   } else {
     snake.pop();
   }
+}
+
+function initilizeInterval() {
+  gameInterval = setInterval(() => {
+    move();
+    checkCollision();
+    draw();
+  }, gameSpeedDelay);
 }
 
 // Test moving
@@ -112,11 +116,7 @@ function startGame() {
   gameStarted = true; // Keep track of a running game
   instructionText.style.display = 'none';
   logo.style.display = 'none';
-  gameInterval = setInterval(() => {
-    move();
-    checkCollision();
-    draw();
-  }, gameSpeedDelay);
+  initilizeInterval();
 }
 
 // Keypress event listener
